@@ -1,0 +1,140 @@
+- File system
+
+    root@localhost:/# - when we see a / here in the prompt, this is the highest level directory, everything is stored
+    example:
+    souvik12@CLD-NBK-SOUVIKG:~$ cd ..
+    souvik12@CLD-NBK-SOUVIKG:/home$ cd ..
+    souvik12@CLD-NBK-SOUVIKG:/$ ls
+    bin   dev  home  lib    lib64   lost+found  mnt  proc  run   snap  sys  usr
+    boot  etc  init  lib32  libx32  media       opt  root  sbin  srv   tmp  var
+
+    bin - user executable files
+    boot - files required to boot os
+    dev - stores info related to hw devices connected to the system
+    etc - local system config files
+    home - home dir files for all users other than root
+    root - user files for root user
+    lib - library files used to boot the system
+    media - mount external media devices
+    mnt - temp file systems mounted
+    opt - optional file systems
+    sbin - system binary files executabled used by sysadmin
+    tmp - temp files
+    usr - sharable read only files between all users
+    var - variable data files used by database software
+
+
+- Meaning of prompt at startup:
+
+    example: 
+    root@localhost:~#
+    
+    root - username
+    @ - separator between user and machine
+    localhost - machine name (many times this will be IP address)
+    : - delimiter
+    ~ - current working directory (user's home directory)
+    # - delimiter
+
+- ls command:
+
+    example: 
+    souvik12@CLD-NBK-SOUVIKG:~$ ls                                                                                          
+    a  test_file.txt
+
+    list command
+    contents of current directory
+
+- cd command:
+
+    example: 
+    souvik12@CLD-NBK-SOUVIKG:~$ cd a                                                                                        
+    souvik12@CLD-NBK-SOUVIKG:~/a$   
+
+    change directory command
+    move one level up - cd ..
+    move 2 levels up - cd ../..
+    home directory - cd ~
+
+- mkdir command:
+
+    example:
+    souvik12@CLD-NBK-SOUVIKG:~$ mkdir b
+    souvik12@CLD-NBK-SOUVIKG:~$ ls
+    a  b  test_file.txt
+    
+    create new directory
+
+- touch command:
+
+    example:
+    souvik12@CLD-NBK-SOUVIKG:~$ touch test_file.txt
+    souvik12@CLD-NBK-SOUVIKG:~$ ls
+    a  b  test_file.txt
+
+    create an empty file
+
+- pwd command:
+
+    example:
+    souvik12@CLD-NBK-SOUVIKG:~$ pwd 
+    /home/souvik12
+
+    present working directory
+
+- cat command:
+
+    example:
+    souvik12@CLD-NBK-SOUVIKG:~$ cat souvik.txt
+    hello my name is souvik
+
+    read a file
+
+    also add contents to a file
+    souvik12@CLD-NBK-SOUVIKG:~$ cat >> test_file.txt
+    this is new test (use ctrl + D to exit prompt)
+
+    concatenate contents of one file in another
+    cat <file to take contents from> >> <file to add content to>
+    cat newfile1.txt >> newfile.txt
+
+- mv command:
+
+    example:
+    mv tim.txt newfile1.txt a
+    tim.txt and newfile1.txt are files to move
+    a is the directory where the file is being moved
+
+- cp command:
+
+    example:
+    cp tim.txt copied_file.txt
+    tim.txt - file to be copied
+    copied_file.txt - new file
+
+- rm command:
+
+    example:
+    rm <file_name>
+    this is for files
+    rm -i for interactive yes/no option prompt
+    rm -r for folder because -r is recursive
+    rm -d for empty directory
+    can also use pattern matching rm *.txt
+
+- rmdir command:
+
+    example:
+    rmdir <folder name>
+    rmdir only removed empty folders
+
+- find command:
+
+    find . -name <name of file>
+    use a special character : find . -name "*.txt"
+    omits capitals: find . -iname "*.txt"
+    find . -type d -name <folder name>
+
+
+
+
