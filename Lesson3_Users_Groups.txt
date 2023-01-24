@@ -1,0 +1,87 @@
+- Create a new user:
+
+    Note - these commands will only work as root user
+
+    Example:
+    root@localhost:~# adduser souvik
+    Adding user 'souvik' ...
+    Adding new group 'souvik' (1001) ...
+    Adding new user 'souvik' (1001) with group 'souvik' ...
+    Creating home directory '/home/souvik' ...
+    Copying files from '/etc/skel' ...
+    New password:
+    Retype new password:
+    passwd: password updated successfully
+    Changing the user information for souvik
+    Enter the new value, or press ENTER for the default
+                Full Name []: Souvik Ghosh
+                Room Number []:
+                Work Phone []:
+                Home Phone []:
+                Other []:
+    Is this information correct? [Y/n] Y
+
+    Get all users on system: cat /etc/passwd
+
+- Remove a user:
+
+    Example:
+    deluser souvik
+
+    This will remove user, group, home folder ...
+
+- Change a password for a user:
+
+    Example:
+    passwd souvik
+
+    Change password for your own user - passwd
+
+- Group:
+
+    Collection of users that have same permission
+    Primary group - be default when user creater, group with same name created as well. There is only 1 Primary Group for a user.
+    Every new file created by user is owned by Primary Group.
+    Secondary group - user can have 15 of these
+
+    Example:
+    addgroup python
+
+    #add user to the group
+    usermod -a -G python souvik (here -a append -G group)
+
+    #see what groups user is assigned to
+    groups souvik
+
+    #see what groups current user belongs to
+    groups
+
+    #remove someone from group
+    gpasswd -d souvik python
+
+    #give specific user permission
+    visudo
+    go to the section in the document
+    # User priviledge specification
+    root    ALL=(ALL:ALL) ALL
+    souvik  ALL=/usr/bin/top
+    #give souvik user permission to run top command
+
+    allow group to run command
+    # Allow members of group sudo to execute any command
+    %sudo   ALL=(ALL:ALL) ALL
+    %python ALL=/usr/bin/ls, /usr/bin/less, /usr/bin/apt
+
+
+- Command to find location of commands:
+
+    which <command>
+    Example:
+    which cat
+
+-Delete a group:
+
+    delgroup python
+    Removing group 'python' ...
+    Done.
+
