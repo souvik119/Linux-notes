@@ -1,0 +1,32 @@
+- ls -l comand:
+
+    detailed info on the files/folders in the current dir
+
+    example:
+    drwxr-xr-x 2 root root 4096 Jan  5 22:38 a 
+    d is directory, rwxr-xr-x file permission, 2 is no of files within dir, root is who created the file, root is group
+    4096 is size of dir, Jan  5 22:38 is created timestamp, a is the dir name
+
+- File permissions:
+
+    r - read
+    w - write
+    x - execute
+
+    order of permsision display: user, group, all users
+    Example:
+    rw-r--r-- means user has read and write permsision, group is read only and all users is read only
+
+
+- Change permissions:
+
+    chmod [who] [+,-,=] [permission(s)] filename
+    chmod -R [who] [+,-,=] [permission(s)] dirname
+
+    who - user, group, other, all (u, g, o, a)
+
+    Example:
+    chmod a+w abc.txt
+    chmod u+x abc.txt
+    chmod -R a+w new_dir
+    chmod g+w,o-rw,a+x abcd.txt
