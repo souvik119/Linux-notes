@@ -1,0 +1,30 @@
+- top (View all running processes):
+
+    example: top
+    uptime, no of users loged in, average load, memory usage, CPU %
+    use arrow keys to navigate
+    PID - Process ID
+
+
+- htop:
+
+    not installed by default
+    to install htop: apt install htop
+    example: htop
+    F3 - search
+    F9 - kill process (send a signal to process) usually SIGTERM
+
+
+- kill and killall:
+
+    killall <name of process> - example : killall htop
+    kill <pid> - example : kill 3
+
+- ps(process status):
+
+    lists user processes by root user
+    example: ps
+    ps a - processes for all users
+    ps au - proceeses along with user owners
+    ps aux - also system processes
+
