@@ -1,0 +1,37 @@
+- ifconfig:
+
+    Provide info about network interface devices
+    different devices connected to the machine physical/virtually
+    eth0 - physical ethernet connection (IP address V4 and V6 addresses in there)
+    wlan - wifi
+    lo - loopback (virtual device)
+
+- ip -4/6 addr:
+    
+    Get IPV4/6 address
+    inet -> this is the address
+
+- netstat:
+
+    show detailed info regarding network connectivity
+    netstat -a : all listening ports for tcp, udp connections
+    netstat -at : all tcp port connections
+    netstat -l : all active ports
+    netstat -u : all udp ports
+
+- curl:
+
+    test an endpoint or send a request to url
+    curl https://techwithtim.net - sends get request and print response
+    curl -X POST https://techwithtim.net - post request
+    curl -X POST --data "p1=value1&p2=value2" https://techwithtim.net - post request along with data
+    curl -o response https://techwithtim.net - save response to a file (in this case response)
+    curl -I https://techwithtim.net - only look at http header
+    curl --help
+    curl --header "Content=type:application/json" -X POST --data "p1=value1&p2=value2" https://techwithtim.net - add header with request, sometimes need customer header for auth token
+
+- ping:
+
+    send packets to an address and tell you if you are getting a response back from it
+    ping google.com
+    to stop ctrl + c
