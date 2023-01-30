@@ -1,0 +1,48 @@
+- Public and private key auth 
+
+    no longer need to enter password
+    setup RSA key pair, generate public-pvt key pair
+    RSA public key is stored on server, pvt key is stored on device
+    RSA key pair is more secure and less susecptible to brute force attacks
+
+    MAC:
+    ls ~/.ssh/id_rsa* //search for all public - pvt key pairings on system
+    if you do not have any pairs only then generate a new pair using following commands:
+    ssh-keygen -b 4096
+    /Users/souvik12/.ssh/id_rsa
+    /Users/souvik12/.ssh/id_rsa.pub
+
+    Enter passphrase to encyrpt it
+
+    Add key to server:
+    ssh-copy-id root@172.105.25.135
+
+    After this no need for password, just enter the passphrase to decrypt pvt key on device
+    ssh root@172.105.25.135
+
+    Windows:
+    Use puttygen.exe to generate public-pvt key pairs
+    Change size of key to 4096 and make sure RSA is selected
+    Enter passphrase (5 digit minimum)
+    Save public key (name it as public-key.txt) and pvt key (name it as private-key.ppk)
+    Open putty, load session setting, go to Connection -> SSH -> Auth -> Select pvt key file then save it
+
+    Add public key to server:
+    cd .ssh
+    if .ssh folder is not there then:
+    mkdir .ssh
+    cd .ssh
+    touch authorized_keys
+    cd ..
+    chmod a+rwx,g-rwx,o-rwx .ssh
+    cd .ssh
+    chmod a+rwx,g-rwx,o-rwx,u-x authorized_keys
+    nano authorized_keys 
+    add public key : ssh -rsa <key here> (all on one line)
+
+
+- FTP
+
+    transfer files to and from server
+    need to download a ftp client : winscp, filezilla etc..
+    can use it with password or public-pvt key pair
