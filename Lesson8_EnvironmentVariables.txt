@@ -1,0 +1,31 @@
+- What are environment variables:
+
+    Variables which are specific to en environment
+    For example if you want to store a secret token that you do not want to share with other Users
+    This way each user needs to set their own value for this env variable
+    to print out env variables:
+    env
+    print out specific env varibles:
+    printenv <var name>
+    another way:
+    echo $<var name>
+    Craete env variables/change existing variable values:
+    export <var name>=<value>
+    this is only stored for current session
+
+    for persistent variables (for current user):
+    in the home dir - nano .bashrc
+    anywhere in the file
+    export <var name>="Values"
+    exit out of the file
+    source .bashrc
+
+    create persistent global variables (for all users):
+    cd /etc
+    nano environment
+    export <var name>="<value>"
+    exit out of the file
+    source environment
+
+    Remove env variables from current session
+    unset <var name>
