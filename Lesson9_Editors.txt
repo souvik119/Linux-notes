@@ -1,0 +1,33 @@
+- nano:
+
+    to use: nano or nano <file_name to open/create)
+    type and use arrow keys
+    ctrl + s - save
+    ctrl + o - save as
+    ctrl + c - cancel
+    ctrl + g - keyboard shortcuts
+    how to select text in file: ctrl + 6 then use cyrsor to select
+    alt + 6 - to copy
+    ctrl + u - to paste
+    ctrl + k - to cut
+    ctrl + x - exit
+
+
+- vim:
+
+    to use: vi or vi <file_name to open/create)
+    to start typing type i to get into insert mode
+    Insert mode - modify the file (i)
+    Command mode - commands to the editor (esc)
+    save and quit - :wq
+    quit - :q
+    hightlight - go to command mode (esc) and then press v
+    copy - y
+    paste - p
+    delete highlighted text - d
+    undo - u
+    redo - ctrl + r
+    move fwd one word - w
+    move back one word - b
+    beginning of line - 0
+    end of line - $
