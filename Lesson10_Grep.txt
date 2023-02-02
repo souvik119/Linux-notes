@@ -1,0 +1,20 @@
+- GREP command:
+
+    grep <re pattern> <file to search pattern in>
+    example - grep A grep.txt : show all the lines that conatin the pattern a in the file
+    grep A. grep.txt : . here means any character
+    grep A.A grep.txt : A then any char then A
+    grep [A,B].A grep.txt : starts with A or B then any char and ends with a
+    grep "A.B\|B.A" grep.txt : regrex within "" or operator is \| so it will match A any char B or B any char a
+    grep AB$ grep.txt : AB at the end of line
+    grep ^AB grep.txt : AB at the beginning of line
+    grep -n AB. grep.txt : -n will give the line #
+    grep -o AB grep.txt : only show the pattern not the whole line
+    grep -C 4 A.A grep.txt : shows 4 lines above and below the matching pattern line
+
+
+- Filtering output:
+
+    ls  | grep "pattern"
+    example: ls | grep AB : all file names with AB 
+    grep -r hello root: -r recursively searches in directory root
