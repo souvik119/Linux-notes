@@ -1,0 +1,76 @@
+- Create a shell script file:
+
+    vi test.sh
+
+
+- Contents of shell script:
+
+    At the top add a shebang
+    #!/bin/bash - means use bash to run this script
+
+    # - comment in a shell script
+
+- Example scripts:
+
+    #!/bin/bash
+
+    echo "Hello World!"
+    echo "Hi"
+
+- Run script:
+
+    ./test.sh
+    - if permission denied check file permission
+    chmod +x test.sh
+
+- Function in shell script:
+
+    print() {
+        echo "Called function!"
+    }
+
+    #calling function
+    print
+
+    # using arguments in function
+    print() {
+        $1
+        echo "Called function! $1"
+    }
+
+    print "souvik is great"
+
+    - Variables in shell script:
+
+        x=6
+        souvik_ghosh=1
+
+        echo $x
+
+- Exit code:
+
+    good practice to implement own exit code to signify if script execution was successful or not
+    exit 0 - successful
+    exit 1 - failure
+    Exit will stop the script immediately
+
+- If/ElIf/Else:
+
+    control() {
+        if [[ $1 = "Souvik" ]]; then
+            echo "Souvik is great"
+        elif [[ $2 = "Joe" ]]; then
+            echo "Joe is great"
+        else
+            echo "Souvik is not great"
+        fi
+    }
+
+    control "Souvik"
+    control "Ghosh"
+
+- User input:
+
+    read -p "Name: " user_name
+    echo $user_name
+
