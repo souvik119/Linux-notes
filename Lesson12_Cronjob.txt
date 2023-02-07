@@ -1,0 +1,42 @@
+- Cronjob definition:
+
+    command that is scheduled to run at a specified time, it is managed by crontab
+    crontab is specific to each user and every user has one
+    cronjob is a command to...
+    view a crontab : crontab -l
+    make a crontab : crontab -e
+    create a cronjob :
+    example - run ls command every min : */1 * * * * ls
+    run echo command every 15 mins : */15 * * * * echo "hello"
+    run a command at every 15th min of every hour : 15 * * * * command
+    run a command at every 5th, 10th, 15th min of every hour : 5,10,15 * * * * command
+    run a command at the 0th min of every hour : 0 * * * * command
+    run a command every 4 hours : 0 */4 * * * command
+    run a command every day : 0 0 * * * command (run at 0 min 0 hour every day)
+    run a command at 5am everyday : 0 5 * * * command
+    run a command at 10:30am evey month on 1st day: 30 10 1 * * command
+    run a command at 10:30am every 3 months on 1st day: 30 10 1 */3 * command
+    run a command every weekday: 0 0 * * 1-5 command (run at midnight every weekday)
+
+    shortcuts:
+    @daily command
+    @midnight command
+    @reboot command - run at reboot
+    @weekly command
+    @yearly command
+    @anually command
+    @hourly command
+    @monthly command
+
+- Cronjob syntax:
+
+    1st * - min (0- 59)
+    2nd * - hour (0 - 23)
+    3rd * - day of month (1 - 31)
+    4th * - month (1 - 12)
+    5th * - day of week (0 - 6) (0 to 6 are Sunday to Saturday, or use names; 7 is also Sunday)
+
+- Using cronjob with scripts:
+
+    crontab -e
+    */1 * * * * ./root/test.sh - every min run test.sh script
