@@ -1,0 +1,55 @@
+- uptime:
+
+    shows the uptime of the system
+    how many users are logeed in, average load..
+
+- wall <message>:
+
+    example wall hello
+    this will broadcast to all users
+
+- write <username>:
+
+    example write souvik
+    hello
+    hi
+    ctrl+c
+    send message to a specific user
+
+- mesg y/n:
+
+    Enabled/disable ability to receive messages
+
+- who:
+
+    shows all users who are logged into the system
+
+- free:
+
+    shows all system resources being used (free/used memory)
+
+- sort <filename>:
+
+    arrange lines in a file
+    returns lines of a file sorted based on ascending order
+    for descending sort -r <filename>
+
+- shutdown -h now:
+
+    shuts down the machine at a specified time from command lines
+    shutdown in 10 mins - shutdown -h +10
+    restart the machine now - shutdown -r now
+
+- man <command name>:
+
+    brings up manual for different commands
+    q to quit the man page
+
+- whatis <command>:
+
+    brief description of the command
+
+- tail <filename>:
+
+    shows last 10 lines of a file
+    see last 3 lines = tail -n 3 <filename>
