@@ -1,0 +1,14 @@
+- Detach process from ssh window
+
+    command is attached to ssh instance, as soon as you close the process stops
+    screen gunicorn -w 3 flask_project:app
+    now server will run even when ssh window is closed
+
+- Connect a domain to the server
+
+    need to purchase a domain
+    namecheap, godaddy....
+    nameservers -> custom DNS -> nameservers add : ns1.linode.com, ns2.linode.com....ns5.linode.com
+    over to linode
+    create a domain -> timeoutwithtim.net, email,..., inser default records from one of my Linodes -> flask-app -> create domain
+    
