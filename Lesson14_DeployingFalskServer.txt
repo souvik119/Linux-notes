@@ -1,0 +1,39 @@
+- Install python and pip and flask
+
+    sudo apt-get install python3
+    sudo apt-get install python3-pip
+    pip3 install flask
+
+- Create flask application
+
+    In user's home folder make a folder for the flask project
+    mkdir flask_project
+    nano __init__.py
+    write basic code for flask website
+
+- Install and config nginx
+
+    Forward request coming to public IP address to our local webserver
+    sudo apt install nginx
+    setup a config file
+    nano /etc/nginx/sites-enabled/flask_project
+    take the nginx code from github
+    change server_name field (find from linode)
+    remove default config file and replace with this one
+    unlink /etc/nginx/sites-enabled/default
+    nginx -s reload
+
+- Installing Gunicorn
+
+    Python webserver gateway interface
+    Forward request from nginx to our webserver
+    sudo apt-get install gunicorn
+    go to parent directory of where flask app is stored
+    cd ..
+    gunicorn -w 3 flask_project:app
+    -w : workers
+    number of workers = (cpu cores * 2) + 1
+
+- Run the website
+
+    got to public IP address and it should display the website
